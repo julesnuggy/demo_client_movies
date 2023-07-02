@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { Link, Route, Routes } from "react-router-dom"
-import ContactsList from "./components/ContactsList"
+import MoviesList from "./components/MoviesList"
 import ContactsAdd from "./components/ContactsAdd"
 import ContactsView from "./components/ContactsView"
 import ContactsEdit from "./components/ContactsEdit"
-import client from './utils/client.js'
+import client from "./utils/client.js"
 
 import "./styles/styles.css"
 
@@ -12,10 +12,16 @@ export default function App() {
   const [movies, setMovies] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(async () => {
-    const { movies } = await client.get('/movies')
-    setMovies(movies)
-    setIsLoading(false)
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const { movies } = await client.get('/movies');
+      return movies;
+    }
+
+    fetchMovies().then((movies) => {
+      setMovies(movies)
+      setIsLoading(false)
+    });
   }, [])
 
   return (
@@ -29,10 +35,10 @@ export default function App() {
       </nav>
       <main>
         <Routes>
-          <Route path='/' element={<ContactsList contacts={movies} setContacts={setMovies} isLoading={isLoading}/>} />
-          <Route path='/movies/add' element={<ContactsAdd setContacts={setMovies} contacts={movies}/>} />
+          <Route path='/' element={<MoviesList movies={movies} setMovies={setMovies} isLoading={isLoading} />} />
+          <Route path='/movies/add' element={<ContactsAdd setContacts={setMovies} contacts={movies} />} />
           <Route path='/movies/:id' element={<ContactsView />} />
-          <Route path='/movies/:id/edit' element={<ContactsEdit setContacts={setMovies} contacts={movies}/>} />
+          <Route path='/movies/:id/edit' element={<ContactsEdit setContacts={setMovies} contacts={movies} />} />
         </Routes>
       </main>
     </>
