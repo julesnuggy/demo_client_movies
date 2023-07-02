@@ -1,7 +1,4 @@
-# React Address Book
-
-![React Address Book](./images/address-book.gif)
-
+# Demo Client - Movies
 ## Setup
 
 1. Fork and clone this repository
