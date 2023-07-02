@@ -1,4 +1,4 @@
-const apiUrl = `http://localhost:3030`
+const apiUrl = `${process.env.API_BASE_URL}:${process.env.API_PORT}`
 
 const request = async (path, opts = {}) => {
   const res = await fetch(`${apiUrl}${path}`, opts)
