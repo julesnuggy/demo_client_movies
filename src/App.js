@@ -29,8 +29,8 @@ export default function App() {
       <nav>
         <h2>Menu</h2>
         <ul>
-          <li><Link to='/'>Contacts List</Link></li>
-          <li><Link to='/movies/add'>Add New Contact</Link></li>
+          <li><Link to='/'>Movies List</Link></li>
+          <li><Link to='/movies/add'>Add New Movie</Link></li>
         </ul>
       </nav>
       <main>
