@@ -1,4 +1,6 @@
-const apiUrl = `${process.env.REACT_APP_API_BASE_URL}:${process.env.REACT_APP_API_PORT}`
+const apiUrl = process.env.REACT_APP_API_BASE_URL === 'http://localhost'
+  ? `${process.env.REACT_APP_API_BASE_URL}:${process.env.REACT_APP_API_PORT}`
+  : `${process.env.REACT_APP_API_BASE_URL}`;
 
 const request = async (path, opts = {}) => {
   const res = await fetch(`${apiUrl}${path}`, opts)
