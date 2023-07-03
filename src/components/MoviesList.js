@@ -35,7 +35,7 @@ function MoviesList({ movies, setMovies, isLoading }) {
     { isLoading ?
       <Spinner /> :
       <>
-        <ul className="contacts-list">
+        <ul className="movies-list">
           {movies.map(movie => {
             return (
               <li className="contact" key={movie.id}>

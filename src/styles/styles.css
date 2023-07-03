@@ -75,14 +75,14 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.08);
 }
 
-.contacts-section {
+.movies-section {
   height: 100vh;
   padding: 2rem 1rem;
 
   overflow-y: hidden;
 }
 
-.contacts-section header {
+.movies-section header {
   padding: 0.5rem 0;
 
   display: grid;
@@ -92,15 +92,15 @@ h2 {
   border-bottom: 1px solid #1b1b1b;
 }
 
-.contacts-list > li + li {
+.movies-list > li + li {
   border-top: 1px solid #cbcbcb;
 }
 
-.contacts-list {
+.movies-list {
   max-width: 400px;
 }
 
-.contacts-list > li {
+.movies-list > li {
   padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr auto;
