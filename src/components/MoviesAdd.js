@@ -22,7 +22,7 @@ function MoviesAdd({ setMovies, movies }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(movieData)
     }
-    const { movie } = await client.post('/contacts', opts)
+    const { movie } = await client.post('/movies', opts)
     setMovies([...movies, movie])
     navigate('/')
   }
@@ -38,7 +38,7 @@ function MoviesAdd({ setMovies, movies }) {
       <input id="director" name="director" type="text" required onChange={handleChange} value={movieData.director}/>
 
       <label htmlFor="release_year">Release Year:</label>
-      <input id="release_year" name="release_year" type="date" required onChange={handleChange} value={movieData.release_year}/>
+      <input id="release_year" name="release_year" type="number" min="1900" max="2099" step="1" required onChange={handleChange} value={movieData.release_year}/>
 
       <label htmlFor="duration_mins">Duration (mins):</label>
       <input id="duration_mins" name="duration_mins" type="number" required onChange={handleChange} value={movieData.duration_mins}/>
