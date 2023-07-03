@@ -3,7 +3,7 @@ import { Link, Route, Routes } from "react-router-dom"
 import MoviesList from "./components/MoviesList"
 import MoviesAdd from "./components/MoviesAdd"
 import MoviesView from "./components/MoviesView"
-import ContactsEdit from "./components/ContactsEdit"
+import MoviesEdit from "./components/MoviesEdit"
 import client from "./utils/client.js"
 
 import "./styles/styles.css"
@@ -38,7 +38,7 @@ export default function App() {
           <Route path='/' element={<MoviesList movies={movies} setMovies={setMovies} isLoading={isLoading} />} />
           <Route path='/movies/add' element={<MoviesAdd setMovies={setMovies} movies={movies} />} />
           <Route path='/movies/:id' element={<MoviesView />} />
-          <Route path='/movies/:id/edit' element={<ContactsEdit setContacts={setMovies} contacts={movies} />} />
+          <Route path='/movies/:id/edit' element={<MoviesEdit setMovies={setMovies} movies={movies} />} />
         </Routes>
       </main>
     </>
