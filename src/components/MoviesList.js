@@ -1,25 +1,8 @@
-import { Link, useSearchParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Spinner from './Spinner'
 import client from '../utils/client.js'
 
 function MoviesList({ movies, setMovies, isLoading }) {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const handleChange = async event => {
-    const {value, checked} = event.target
-    const directors = searchParams.getAll('director')
-    if (checked) directors.push(value)
-    if (!checked) directors.splice(directors.indexOf(value), 1)
-    setSearchParams({director: directors})
-    const filteredMovies = await filterByDirectors(directors)
-    setMovies(filteredMovies)
-  }
-
-  const filterByDirectors = async (directors) => {
-    const { movies } = await client.get('/movies')
-    if (directors.length === 0) return movies
-    return movies.filter(movie => directors.includes(movie.director))
-  }
-
   const handleDelete = async id => {
     await client.delete(`/movies/${id}`, { method: 'DELETE' })
     const filteredMovies = movies?.filter(movie => movie.id !== id)
