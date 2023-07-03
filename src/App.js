@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, Route, Routes } from "react-router-dom"
 import MoviesList from "./components/MoviesList"
 import MoviesAdd from "./components/MoviesAdd"
-import ContactsView from "./components/ContactsView"
+import MoviesView from "./components/MoviesView"
 import ContactsEdit from "./components/ContactsEdit"
 import client from "./utils/client.js"
 
@@ -37,7 +37,7 @@ export default function App() {
         <Routes>
           <Route path='/' element={<MoviesList movies={movies} setMovies={setMovies} isLoading={isLoading} />} />
           <Route path='/movies/add' element={<MoviesAdd setMovies={setMovies} movies={movies} />} />
-          <Route path='/movies/:id' element={<ContactsView />} />
+          <Route path='/movies/:id' element={<MoviesView />} />
           <Route path='/movies/:id/edit' element={<ContactsEdit setContacts={setMovies} contacts={movies} />} />
         </Routes>
       </main>
