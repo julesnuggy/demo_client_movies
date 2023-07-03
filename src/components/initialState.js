@@ -1,12 +1,8 @@
 const initialState = {
-  firstName: '',
-  lastName: '',
-  street: '',
-  city: '',
-  type: '',
-  email: '',
-  linkedin: '',
-  twitter: ''
+  title: '',
+  director: '',
+  release_year: '',
+  duration_mins: '',
 }
 
 export default initialState

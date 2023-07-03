@@ -43,7 +43,7 @@ function Meetings() {
         <h2>Meetings</h2>
       </header>
 
-      <form className="form-stack contact-form" onSubmit={handleSubmit}>
+      <form className="form-stack movie-form" onSubmit={handleSubmit}>
         <h2>Create A Meeting</h2>
 
         <label htmlFor="name">Meeting Name</label>

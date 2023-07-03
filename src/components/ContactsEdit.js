@@ -35,7 +35,7 @@ function ContactsEdit({ setContacts, contacts }) {
   }
 
   return (
-    <form className="form-stack contact-form" onSubmit={handleSubmit}>
+    <form className="form-stack movie-form" onSubmit={handleSubmit}>
       <h2>Update Contact</h2>
 
       <select name="type" onChange={handleChange} value={contactData.type}>

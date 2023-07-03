@@ -35,14 +35,6 @@ function MoviesList({ movies, setMovies, isLoading }) {
     { isLoading ?
       <Spinner /> :
       <>
-        <label className="filter">
-          <input name="director" type="checkbox" value="personal"  onChange={handleChange} />
-          <span>🍻</span> Personal
-        </label>
-        <label className="filter">
-          <input name="director" type="checkbox" value="work"  onChange={handleChange} />
-          <span>💻</span> Work
-        </label>
         <ul className="contacts-list">
           {movies.map(movie => {
             return (

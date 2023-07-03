@@ -125,23 +125,23 @@ h2 {
   width: 100%;
 }
 
-.contact-form {
+.movie-form {
   max-width: 400px;
 }
 
-.contact-form h1 {
+.movie-form h1 {
   margin-bottom: 1rem;
 }
 
-.contact-form label {
+.movie-form label {
   font-weight: bold;
 }
 
-.contact-form .checkbox-section {
+.movie-form .checkbox-section {
   padding: 0.25rem 0;
 }
 
-.contact-form .actions-section {
+.movie-form .actions-section {
   display: grid;
   grid-auto-flow: column;
   justify-content: right;
