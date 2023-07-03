@@ -8,6 +8,3 @@
    2. If running with a deployed server, you just need the URL to the deployed server.
 4. `npm install`
 5. `npm start`
-
-N.B. The `.env` file should not contain any values, just variable name definitions. This file is used for the 
-production deployment to allow for env vars to be correctly defined. The values are inserted in the deployment settings.

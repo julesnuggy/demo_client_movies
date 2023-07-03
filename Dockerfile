@@ -4,6 +4,13 @@ FROM node:18
 # Set Node Env to "production" to enable Production features
 ENV NODE_ENV=production
 
+
+# Add env vars whose values are set in the container
+ARG REACT_APP_API_BASE_URL
+ARG REACT_APP_API_PORT
+ENV REACT_APP_API_BASE_URL $REACT_APP_API_BASE_URL
+ENV REACT_APP_API_PORT $REACT_APP_API_PORT
+
 # Set the working directory in the container
 WORKDIR /app
 
